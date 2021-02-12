@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import hiplot as hip
-
+st.beta_set_page_config(layout="wide")
 st.title("Boddu Venkatesh")
 
 my_skills = pd.read_excel("C://Users//User//examples//datasets//myskills.xlsx",sheet_name =[0,1,2,3,4,5])
@@ -28,4 +28,4 @@ if st.sidebar.checkbox("Chem Data Science"):
     my_expander = st.beta_expander("Database")
     my_expander = st.beta_expander("Python Libraries")
     my_expander = st.beta_expander("Articles")
-if st.sidebar.checkbox("")
+#if st.sidebar.checkbox(""):
