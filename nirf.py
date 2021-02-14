@@ -17,6 +17,8 @@ import matplotlib.pyplot as plt
 #----------------------------------------------------------------------------#
 #   NIRF 2020-------------------------------#
 #----------------------------------------------------------------------------#
+def about_proj_nirf():
+    st.markdown("# About Proj NIRF")
 def nirf(cat):
     df=pd.read_excel("C://Users//User//examples//my_cv//nirf2020.xlsx",sheet_name=cat)
     df=df.drop(['Institute ID'],axis=1)
@@ -41,7 +43,7 @@ def nirf(cat):
         st.pyplot(fig)
 
 #st.title("NIRF Analytics 2020")
-def get_proj():
+def get_proj_nirf():
     category=['Overall','University','Engineering','Management','Pharmacy','College','Medical','Law','Architecture','Dental']
     choose_cat=st.sidebar.selectbox('Category',category)
     for c in category:
