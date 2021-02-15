@@ -26,7 +26,7 @@ Pdf report with recommended colleges and college counselling process""")
 
 
 def getdata():
-    df=pd.read_excel("K://5. Projects//iit//2018.xlsx",sheet_name=6)
+    df=pd.read_excel("2018.xlsx",sheet_name=6)
 
     if st.sidebar.checkbox("Explore"):
         c=st.selectbox('College',df['Institute'].unique())
