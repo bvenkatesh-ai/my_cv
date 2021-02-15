@@ -6,9 +6,9 @@ from iit import *
 st.beta_set_page_config(layout="wide")
 
 
-my_skills = pd.read_excel("C://Users//User//examples//my_cv//myskills.xlsx",sheet_name =[0,1,2,3,4,5])
+my_skills = pd.read_excel("myskills.xlsx",sheet_name =[0,1,2,3,4,5])
 #To get the page names
-sh_names =pd.ExcelFile("C://Users//User//examples//my_cv//myskills.xlsx")
+sh_names =pd.ExcelFile("myskills.xlsx")
 pages = sh_names.sheet_names
 def main():
     #--------------------Projects------------------------------------------#
