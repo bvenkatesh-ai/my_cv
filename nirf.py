@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 def about_proj_nirf():
     st.markdown("# About Proj NIRF")
 def nirf(cat):
-    df=pd.read_excel("C://Users//User//examples//my_cv//nirf2020.xlsx",sheet_name=cat)
+    df=pd.read_excel("nirf2020.xlsx",sheet_name=cat)
     df=df.drop(['Institute ID'],axis=1)
     #st.write(df.head())
     if st.sidebar.checkbox("Top 10 institutions",key='n1'):
