@@ -9,7 +9,9 @@ from PIL import Image
 
 
 st.beta_set_page_config(layout="wide")
-
+st.beta_set_page_title("Aspiring Data Scientist")
+image = Image.open('Boddu_Venkatesh.jpg')
+st.beta_set_favicon(image)
 
 my_skills = pd.read_excel("myskills.xlsx",sheet_name =[0,1,2,3,4,5])
 #To get the page names
@@ -24,8 +26,8 @@ def main():
         st.subheader(pages[0])
         sel = st.radio("Select format", ["PDF", "Image"])
         if sel == "Image":
-            image = Image.open('bvenkatesh_cv.png')
-            st.image(image, caption="Boddu Venkatesh", use_column_width=True)
+            image_cv = Image.open('bvenkatesh_cv.png')
+            st.image(image_cv, caption="Boddu Venkatesh", use_column_width=True)
         if sel == "PDF":
            with open("bvenkatesh_cv.pdf","rb") as f:
                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
