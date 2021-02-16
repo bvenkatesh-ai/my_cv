@@ -22,8 +22,13 @@ def main():
     st.sidebar.markdown("---------------")
     if sel_page == pages[0]:
         st.subheader(pages[0])
-        image = Image.open('bvenkatesh_cv.png')
-        st.image(image, caption="Boddu Venkatesh", use_column_width=True)
+        
+        with open("bvenkatesh_cv.pdf","rb") as f:
+           base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+           pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000" type="application/pdf">"""
+           st.markdown(pdf_display, unsafe_allow_html=True)
+        #image = Image.open('bvenkatesh_cv.png')
+        #st.image(image, caption="Boddu Venkatesh", use_column_width=True)
   #      num = len(my_skills[0]['Project Name'])
    #     cols = st.beta_columns(num)
     #    p= [1,2,3,4]
@@ -92,7 +97,6 @@ def main():
         with open("bvenkatesh_cv.pdf","rb") as f:
            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
            pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">"""
-          # pdf_display = """<embed src="base64_pdf" width="700" height="1000" type="application/pdf">"""
            st.markdown(pdf_display, unsafe_allow_html=True)
     #    p1_cols = st.beta_columns([1,4,2])
      #   with p1_cols[1]:
