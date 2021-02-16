@@ -10,8 +10,7 @@ from PIL import Image
 image = Image.open('Boddu_Venkatesh.jpg')
 st.beta_set_page_config(page_title = "Aspiring Data Scientist",page_icon = image,layout="wide")
 
-
-#st.beta_set_favicon(image)
+@st.cache
 
 my_skills = pd.read_excel("myskills.xlsx",sheet_name =[0,1,2,3,4,5])
 #To get the page names
@@ -42,7 +41,7 @@ def main():
         p= [1,2,3,4]
         for i in range(0,num):
             p[i] = cols[i].checkbox(my_skills[1]['Project Name'][i], key =i)
-            st.write("----------------------")
+           # st.write("----------------------")
         colu1, colu2 = st.beta_columns([4,1])
         with colu2:
              ch = st.radio("Select",["About","Interact"],)
