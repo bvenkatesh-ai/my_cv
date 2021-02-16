@@ -52,19 +52,19 @@ def main():
                       about_proj_nirf()
                  if ch =="Interact":
                       get_proj_nirf()
-              elif p[1]:
+             elif p[1]:
                    if ch =="About":
                       about_proj_iit()
                    if ch =="Interact":
                 #st.write(my_skills[0]['Project Name'][1])
                        st.sidebar.markdown(get_table_download_link(getdata()), unsafe_allow_html=True)
 
-              elif p[2]:
+             elif p[2]:
                    if ch =="About":
                       about_proj_iit()
                    if ch =="Interact":
                       st.write(my_skills[1]['Project Name'][2])
-              elif p[3]:
+             elif p[3]:
                      if ch =="About":
                         about_proj_iit()
                      if ch =="Interact":
