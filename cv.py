@@ -83,7 +83,7 @@ def main():
     if sel_page == pages[4]:
         with open("bvenkatesh_cv.pdf","rb") as f:
            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-           pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">’
+           pdf_display = """<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">"""
            st.markdown(pdf_display, unsafe_allow_html=True)
     #    p1_cols = st.beta_columns([1,4,2])
      #   with p1_cols[1]:
