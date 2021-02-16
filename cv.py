@@ -8,8 +8,8 @@ from io import BytesIO
 from PIL import Image
 
 
-st.beta_set_page_config(layout="wide")
-st.beta_set_page_title("Aspiring Data Scientist")
+st.beta_set_page_config(page_title = "Aspiring Data Scientist",page_icon = "BV",layout="wide")
+
 image = Image.open('Boddu_Venkatesh.jpg')
 st.beta_set_favicon(image)
 
