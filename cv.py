@@ -3,6 +3,11 @@ import pandas as pd
 import hiplot as hip
 from nirf import *
 from iit import *
+import base64
+from io import BytesIO
+from PIL import Image
+
+
 st.beta_set_page_config(layout="wide")
 
 
