@@ -25,7 +25,7 @@ def main():
         
         with open("bvenkatesh_cv.pdf","rb") as f:
            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-           pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000" type="application/pdf">"""
+           pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="400" height="600" type="application/pdf">"""
            st.markdown(pdf_display, unsafe_allow_html=True)
         #image = Image.open('bvenkatesh_cv.png')
         #st.image(image, caption="Boddu Venkatesh", use_column_width=True)
@@ -94,10 +94,10 @@ def main():
         #my_expander = st.beta_expander("Articles")
     #--------------------CV------------------------------------------#
     if sel_page == pages[4]:
-        with open("bvenkatesh_cv.pdf","rb") as f:
-           base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-           pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">"""
-           st.markdown(pdf_display, unsafe_allow_html=True)
+        #with open("bvenkatesh_cv.pdf","rb") as f:
+         #  base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+          # pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">"""
+           #st.markdown(pdf_display, unsafe_allow_html=True)
     #    p1_cols = st.beta_columns([1,4,2])
      #   with p1_cols[1]:
       #      st.markdown("""
