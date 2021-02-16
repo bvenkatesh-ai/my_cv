@@ -23,7 +23,7 @@ def main():
     if sel_page == pages[0]:
         st.subheader(pages[0])
         image = Image.open('bvenkatesh_cv.png')
-        st.image(image, caption="Boddu Venkatesh", width=130)
+        st.image(image, caption="Boddu Venkatesh", use_column_width=True)
   #      num = len(my_skills[0]['Project Name'])
    #     cols = st.beta_columns(num)
     #    p= [1,2,3,4]
