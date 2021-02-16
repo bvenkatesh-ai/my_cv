@@ -22,7 +22,7 @@ def main():
     st.sidebar.markdown("---------------")
     if sel_page == pages[0]:
         st.subheader(pages[0])
-        sel = st.radio("Select", ["PDF", "Image"])
+        sel = st.radio("Select format", ["PDF", "Image"])
         if sel == "Image":
             image = Image.open('bvenkatesh_cv.png')
             st.image(image, caption="Boddu Venkatesh", use_column_width=True)
@@ -77,7 +77,7 @@ def main():
        # if st.checkbox("My Skills_raw"):
         #   st.write(my_skills[0])
         if st.checkbox("My Skills"):
-             Create your experiment as usual
+            # Create your experiment as usual
              data = [{'Tools': 'git/github', 'Profiency': 3, 'projects': 'PCM'},
                    {'Tools': 'python', 'Profiency': 4, 'projects': 'NIRF Analytics'},
                     {'Tools': 'MYSQL', 'Profiency': 3, 'projects': 'Adam'}]
