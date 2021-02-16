@@ -9,10 +9,10 @@ st.beta_set_page_config(layout="wide")
 my_skills = pd.read_excel("myskills.xlsx",sheet_name =[0,1,2,3,4,5])
 #To get the page names
 sh_names =pd.ExcelFile("myskills.xlsx")
-pages = sh_names.sheet_names
+pages = sh_names.sheet_names.sort()
 def main():
     #--------------------Projects------------------------------------------#
-    sel_page = st.sidebar.selectbox("Page", pages[0:5].sort())
+    sel_page = st.sidebar.selectbox("Page", pages[0:5])
     st.sidebar.markdown("---------------")
     if sel_page == pages[0]:
         st.subheader(pages[0])
