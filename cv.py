@@ -9,7 +9,8 @@ st.beta_set_page_config(layout="wide")
 my_skills = pd.read_excel("myskills.xlsx",sheet_name =[0,1,2,3,4,5])
 #To get the page names
 sh_names =pd.ExcelFile("myskills.xlsx")
-pages = sh_names.sheet_names.sort()
+pages = sh_names.sheet_names
+
 def main():
     #--------------------Projects------------------------------------------#
     sel_page = st.sidebar.selectbox("Page", pages[0:5])
