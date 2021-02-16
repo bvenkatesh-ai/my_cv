@@ -22,7 +22,7 @@ def main():
     st.sidebar.markdown("---------------")
     if sel_page == pages[0]:
         st.subheader(pages[0])
-        sel = st.radio("Select", ("PDF", "Image"))
+        sel = st.radio("Select", ["PDF", "Image"])
         if sel == "PDF":
            with open("bvenkatesh_cv.pdf","rb") as f:
                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
