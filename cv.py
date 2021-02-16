@@ -17,7 +17,7 @@ sh_names =pd.ExcelFile("myskills.xlsx")
 pages = sh_names.sheet_names
 
 def main():
-    #--------------------Projects------------------------------------------#
+    #--------------------CV------------------------------------------#
     sel_page = st.sidebar.selectbox("Page", pages[0:5])
     st.sidebar.markdown("---------------")
     if sel_page == pages[0]:
@@ -31,72 +31,73 @@ def main():
                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
                pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="600" height="800" type="application/pdf">"""
                st.markdown(pdf_display, unsafe_allow_html=True)
-          #      num = len(my_skills[0]['Project Name'])
-   #     cols = st.beta_columns(num)
-    #    p= [1,2,3,4]
-     #   for i in range(0,num):
-      #      p[i] = cols[i].checkbox(my_skills[0]['Project Name'][i], key =i)
-       # st.write("----------------------")
-       # colu1, colu2 = st.beta_columns([4,1])
-
-        #with colu2:
-         #   ch = st.radio("Select",["About","Interact"])
-        #with colu1:
-         #   if p[0]:
-          #      if ch =="About":
-           #         about_proj_nirf()
-            #    if ch =="Interact":
-             #       get_proj_nirf()
-            #elif p[1]:
-             #   if ch =="About":
-              #      about_proj_iit()
-               # if ch =="Interact":
-                ##st.write(my_skills[0]['Project Name'][1])
-                 #   st.sidebar.markdown(get_table_download_link(getdata()), unsafe_allow_html=True)
-
-            #elif p[2]:
-             #   if ch =="About":
-              #      about_proj_iit()
-               # if ch =="Interact":
-                #    st.write(my_skills[0]['Project Name'][2])
-            #elif p[3]:
-             #   if ch =="About":
-              #      about_proj_iit()
-               # if ch =="Interact":
-                #    st.write(my_skills[0]['Project Name'][3])
-
-
-    #--------------------Skills------------------------------------------#
+  
+    #--------------------Projects------------------------------------------#
     if sel_page == pages[1]:
         st.subheader(pages[1])
-      #  if st.checkbox("My Skills_raw"):
-       #     st.write(my_skills[0])
-        #if st.checkbox("My Skills"):
-            # Create your experiment as usual
-         #   data = [{'Tools': 'git/github', 'Profiency': 3, 'projects': 'PCM'},
-          #          {'Tools': 'python', 'Profiency': 4, 'projects': 'NIRF Analytics'},
-           #         {'Tools': 'MYSQL', 'Profiency': 3, 'projects': 'Adam'}]
-            #xp = hip.Experiment.from_iterable(data)
+        num = len(my_skills[0]['Project Name'])
+        cols = st.beta_columns(num)
+        p= [1,2,3,4]
+        for i in range(0,num):
+            p[i] = cols[i].checkbox(my_skills[0]['Project Name'][i], key =i)
+            st.write("----------------------")
+            colu1, colu2 = st.beta_columns([4,1])
+            with colu2:
+                ch = st.radio("Select",["About","Interact"])
+            with colu1:
+                if p[0]:
+                   if ch =="About":
+                      about_proj_nirf()
+                   if ch =="Interact":
+                      get_proj_nirf()
+                elif p[1]:
+                   if ch =="About":
+                      about_proj_iit()
+                   if ch =="Interact":
+                #st.write(my_skills[0]['Project Name'][1])
+                       st.sidebar.markdown(get_table_download_link(getdata()), unsafe_allow_html=True)
 
-            # Display with `display_st` instead of `display`
-            #ret_val = xp.display_st(ret="selected_uids", key="hip")
+                elif p[2]:
+                   if ch =="About":
+                      about_proj_iit()
+                   if ch =="Interact":
+                      st.write(my_skills[0]['Project Name'][2])
+                elif p[3]:
+                     if ch =="About":
+                        about_proj_iit()
+                     if ch =="Interact":
+                        st.write(my_skills[0]['Project Name'][3])
 
-            #st.markdown("hiplot returned " + json.dumps(ret_val))
 
-    #--------------------Blogs------------------------------------------#
+     
+
+    #--------------------Skills------------------------------------------#
     if sel_page == pages[2]:
         st.write(my_skills[2])
+       # if st.checkbox("My Skills_raw"):
+        #   st.write(my_skills[0])
+        if st.checkbox("My Skills"):
+             Create your experiment as usual
+             data = [{'Tools': 'git/github', 'Profiency': 3, 'projects': 'PCM'},
+                   {'Tools': 'python', 'Profiency': 4, 'projects': 'NIRF Analytics'},
+                    {'Tools': 'MYSQL', 'Profiency': 3, 'projects': 'Adam'}]
+            xp = hip.Experiment.from_iterable(data)
 
+            # Display with `display_st` instead of `display`
+            ret_val = xp.display_st(ret="selected_uids", key="hip")
 
-    #--------------------Chem DS------------------------------------------#
-    #if sel_page == pages[3]:
-     #   st.write("Coming Soon")
-      #  my_expander = st.beta_expander("Database")
-       # my_expander = st.beta_expander("Python Libraries")
-        #my_expander = st.beta_expander("Articles")
-    #--------------------CV------------------------------------------#
+            st.markdown("hiplot returned " + json.dumps(ret_val))
+
+    #--------------------Blogs------------------------------------------#
+     if sel_page == pages[3]:
+        st.write("Coming Soon")
+     
+    #--------------------Ch DS------------------------------------------#
     if sel_page == pages[4]:
         st.write(sel_page)
+        my_expander = st.beta_expander("Database")
+        my_expander = st.beta_expander("Python Libraries")
+        my_expander = st.beta_expander("Articles")
         #with open("bvenkatesh_cv.pdf","rb") as f:
          #  base64_pdf = base64.b64encode(f.read()).decode('utf-8')
           # pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">"""
