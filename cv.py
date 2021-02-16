@@ -7,10 +7,10 @@ import base64
 from io import BytesIO
 from PIL import Image
 
-
-st.beta_set_page_config(page_title = "Aspiring Data Scientist",page_icon = "BV",layout="wide")
-
 image = Image.open('Boddu_Venkatesh.jpg')
+st.beta_set_page_config(page_title = "Aspiring Data Scientist",page_icon = image,layout="wide")
+
+
 #st.beta_set_favicon(image)
 
 my_skills = pd.read_excel("myskills.xlsx",sheet_name =[0,1,2,3,4,5])
