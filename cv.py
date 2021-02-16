@@ -89,7 +89,7 @@ def main():
              st.markdown("hiplot returned " + json.dumps(ret_val))
 
     #--------------------Blogs------------------------------------------#
-     if sel_page == pages[3]:
+    if sel_page == pages[3]:
         st.write("Coming Soon")
      
     #--------------------Ch DS------------------------------------------#
