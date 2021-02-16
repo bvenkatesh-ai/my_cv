@@ -10,7 +10,7 @@ from PIL import Image
 image = Image.open('Boddu_Venkatesh.jpg')
 st.beta_set_page_config(page_title = "Aspiring Data Scientist",page_icon = image,layout="wide")
 
-@st.cache
+
 
 my_skills = pd.read_excel("myskills.xlsx",sheet_name =[0,1,2,3,4,5])
 #To get the page names
