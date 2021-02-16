@@ -35,7 +35,7 @@ def main():
     #--------------------Projects------------------------------------------#
     if sel_page == pages[1]:
         st.subheader(pages[1])
-        num = len(my_skills[0]['Project Name'])
+        num = len(my_skills[1]['Project Name'])
         cols = st.beta_columns(num)
         p= [1,2,3,4]
         for i in range(0,num):
