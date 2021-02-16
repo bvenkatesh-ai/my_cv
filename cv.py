@@ -81,12 +81,12 @@ def main():
              data = [{'Tools': 'git/github', 'Profiency': 3, 'projects': 'PCM'},
                    {'Tools': 'python', 'Profiency': 4, 'projects': 'NIRF Analytics'},
                     {'Tools': 'MYSQL', 'Profiency': 3, 'projects': 'Adam'}]
-            xp = hip.Experiment.from_iterable(data)
+             xp = hip.Experiment.from_iterable(data)
 
             # Display with `display_st` instead of `display`
-            ret_val = xp.display_st(ret="selected_uids", key="hip")
+             ret_val = xp.display_st(ret="selected_uids", key="hip")
 
-            st.markdown("hiplot returned " + json.dumps(ret_val))
+             st.markdown("hiplot returned " + json.dumps(ret_val))
 
     #--------------------Blogs------------------------------------------#
      if sel_page == pages[3]:
