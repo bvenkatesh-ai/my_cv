@@ -41,7 +41,7 @@ def main():
         cols = st.beta_columns(num)
         p= [1,2,3,4]
         for i in range(0,num):
-            p[i] = cols[i].checkbox(my_skills[0]['Project Name'][i], key =i)
+            p[i] = cols[i].checkbox(my_skills[1]['Project Name'][i], key =i)
             st.write("----------------------")
             colu1, colu2 = st.beta_columns([4,1])
             with colu2:
@@ -63,12 +63,12 @@ def main():
                    if ch =="About":
                       about_proj_iit()
                    if ch =="Interact":
-                      st.write(my_skills[0]['Project Name'][2])
+                      st.write(my_skills[1]['Project Name'][2])
                 elif p[3]:
                      if ch =="About":
                         about_proj_iit()
                      if ch =="Interact":
-                        st.write(my_skills[0]['Project Name'][3])
+                        st.write(my_skills[1]['Project Name'][3])
 
 
      
