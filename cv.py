@@ -22,13 +22,15 @@ def main():
     st.sidebar.markdown("---------------")
     if sel_page == pages[0]:
         st.subheader(pages[0])
-        
-        with open("bvenkatesh_cv.pdf","rb") as f:
-           base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-           pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="400" height="600" type="application/pdf">"""
-           st.markdown(pdf_display, unsafe_allow_html=True)
-        #image = Image.open('bvenkatesh_cv.png')
-        #st.image(image, caption="Boddu Venkatesh", use_column_width=True)
+        sel = st.radio("Select", ("PDF", "Image"))
+        if sel == "PDF":
+           with open("bvenkatesh_cv.pdf","rb") as f:
+               base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+               pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="400" height="600" type="application/pdf">"""
+               st.markdown(pdf_display, unsafe_allow_html=True)
+         if sel == "Image":
+            image = Image.open('bvenkatesh_cv.png')
+            st.image(image, caption="Boddu Venkatesh", use_column_width=True)
   #      num = len(my_skills[0]['Project Name'])
    #     cols = st.beta_columns(num)
     #    p= [1,2,3,4]
