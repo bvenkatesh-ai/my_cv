@@ -6,7 +6,7 @@ from iit import *
 import base64
 from io import BytesIO
 from PIL import Image
-
+@st.cache(suppress_st_warning=True)
 image = Image.open('Boddu_Venkatesh.jpg')
 st.beta_set_page_config(page_title = "Aspiring Data Scientist",page_icon = image,layout="wide")
 
