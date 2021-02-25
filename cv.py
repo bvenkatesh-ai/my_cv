@@ -56,7 +56,7 @@ def main():
                    if ch =="About":
                       about_proj_iit()
                    if ch =="Interact":
-                       st.write(my_skills[0]['Project Name'][1])
+                       #st.write(my_skills[0]['Project Name'][1])
                        st.sidebar.markdown(get_table_download_link(getdata()), unsafe_allow_html=True)
                        pass
              elif p[2]:
