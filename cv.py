@@ -8,7 +8,7 @@ from io import BytesIO
 from PIL import Image
 
 # Import the required libraries
-#import PyPDF2
+
 import tabula
 import os
 
@@ -104,26 +104,7 @@ def main():
 
         # To upload the file
         file = st.file_uploader("Upload pdf file")
-       # def save_uploadedfile(file):
-        #     with open(os.path.join("tempDir", file.name),"wb") as f:
-         #        f.write(file.getbuffer())
-          #   return st.success("Saved File:{} to tempDir".format(file.name))
-        #save_uploadedfile(file)
-        #def getmy_text(f, t, file):
-         #   tot_text = " "
-          #  for i in range(f-1, t):
-           ##    tot_text += page.extractText()
-            #return tot_text
-
-        #if file:
-         #   read_pdf = PyPDF2.PdfFileReader(file)
-          #  tot_pages = read_pdf.getNumPages()
-           # st.success("Uploaded successfully. Total pages:{}".format(tot_pages))
-            #with open("test.pdf","rb") as f:
-             #      base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-              #     pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="600" height="800" type="application/pdf">"""
-               #    st.markdown(pdf_display, unsafe_allow_html=True)
-
+       
         text = st.sidebar.checkbox("Text Extract")
         if text:
             if not file:
