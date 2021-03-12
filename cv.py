@@ -8,8 +8,8 @@ from io import BytesIO
 from PIL import Image
 
 # Import the required libraries
-import PyPDF2
-#import tabula
+#import PyPDF2
+import tabula
 import os
 
 image = Image.open('Boddu_Venkatesh.jpg')
