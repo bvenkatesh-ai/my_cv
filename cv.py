@@ -7,6 +7,11 @@ import base64
 from io import BytesIO
 from PIL import Image
 
+# Import the required libraries
+import PyPDF2
+import tabula
+import os
+
 image = Image.open('Boddu_Venkatesh.jpg')
 st.beta_set_page_config(page_title = "Aspiring Data Scientist",page_icon = image,layout="wide")
 
@@ -95,6 +100,54 @@ def main():
     #--------------------Blogs------------------------------------------#
     if sel_page == pages[3]:
         st.write("Coming Soon")
+        #This file is to extrat text/table from pdf using streamlit
+
+        # To upload the file
+        file = st.file_uploader("Upload pdf file")
+        def save_uploadedfile(file):
+             with open(os.path.join("tempDir", file.name),"wb") as f:
+                 f.write(file.getbuffer())
+             return st.success("Saved File:{} to tempDir".format(file.name))
+        save_uploadedfile(file)
+        def getmy_text(f, t, file):
+            tot_text = " "
+            for i in range(f-1, t):
+                page = read_pdf.getPage(i)
+                tot_text += page.extractText()
+            return tot_text
+
+        if file:
+            read_pdf = PyPDF2.PdfFileReader(file)
+            tot_pages = read_pdf.getNumPages()
+            st.success("Uploaded successfully. Total pages:{}".format(tot_pages))
+            with open("test.pdf","rb") as f:
+                   base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+                   pdf_display = f"""<embed src="data:application/pdf;base64,{base64_pdf}" width="600" height="800" type="application/pdf">"""
+                   st.markdown(pdf_display, unsafe_allow_html=True)
+
+        text = st.sidebar.checkbox("Text Extract")
+        if text:
+            if not file:
+                st.info("Upload the pdf file to extract")
+            cols = st.sidebar.beta_columns(2)
+
+            with cols[0]:
+                from_page = st.selectbox("From",range(1, tot_pages+1))
+            with cols[1]:
+                to_page = st.selectbox("TO",range(from_page, tot_pages+1))
+
+            if st.sidebar.button("Display Text"):
+                st.write(getmy_text(from_page,to_page,file))
+            if st.sidebar.button("To CSV"):
+                tot_pages.to_csv("tot_pages.csv")
+        st.sidebar.markdown("------")
+        table = st.sidebar.checkbox("Table Extract")
+        if table:
+            if not file:
+                st.info("Upload the pdf file to extract")
+            dfs2 = tabula.read_pdf(file, multiple_tables=True)
+            st.write(len(dfs2))
+
      
     #--------------------Ch DS------------------------------------------#
     if sel_page == pages[4]:
