@@ -4,3 +4,4 @@ hiplot==0.1.19
 matplotlib==3.3.2
 xlrd==1.2.0
 fsspec==0.8.4
+tabula
